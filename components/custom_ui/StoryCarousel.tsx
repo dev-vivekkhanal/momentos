@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -165,22 +165,6 @@ const StoryCarousel = () => {
   // Local state
   const [stories, setStories] = useState<Story[]>(storiesMock);
   const [activeStory, setActiveStory] = useState<number>(0);
-  //   hooks
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStory((prevActiveStory) =>
-        prevActiveStory < stories.length - 1
-          ? prevActiveStory + 1
-          : prevActiveStory
-      );
-    }, 4000);
-
-    // Clear the interval when activeStory reaches the end
-    return () => {
-      clearInterval(interval);
-    };
-  }, [activeStory]);
 
   return (
     <div className=" p-5 sticky top-0 z-50 bg-neutral-950">
@@ -231,11 +215,6 @@ const StoryCarousel = () => {
         </Carousel>
 
         <DialogContent className="sm:max-w-md">
-          {/* <Progress
-          value={progress}
-          className="w-full h-[5px] absolute sticky-0"
-        /> */}
-
           <DialogHeader className="flex justify-start items-start">
             <DialogTitle>
               <div className="flex items-center gap-2 h-full  text-left">
