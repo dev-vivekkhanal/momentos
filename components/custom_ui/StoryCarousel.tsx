@@ -214,7 +214,7 @@ const StoryCarousel = () => {
           <CarouselNext />
         </Carousel>
 
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-lg">
           <DialogHeader className="flex justify-start items-start">
             <DialogTitle>
               <div className="flex items-center gap-2 h-full  text-left">
